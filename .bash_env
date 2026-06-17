@@ -5,7 +5,6 @@
 
 #echo '*** this is .bash_env ***' # dbg
 
-
 ############################################################################
 # Load private info not kept in public version control
 if [ -f $HOME/.bash_secrets ]; then
@@ -21,6 +20,9 @@ fi
 # Initialize $PATH with homebrew locations so I can find their tools
 # when working over SSH (such as remote rsync calls)
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+
+# For LM Studio CLI (lms)
+export PATH="$PATH:/Users/fperez/.lmstudio/bin"
 
 # Configure paths, using the path generation functions in .bash_utils
 #
@@ -38,7 +40,7 @@ pfx="$pfx $HOME/.local"  # used by python in --user installs
 # set and exported to the environment.
 export_paths "$pfx"
 
-#echo "stop here"  && return
+#echo "stop here"  && return  # dbg
 
 # Default prefix for personal installs I use.
 export PREFIX=$HOME/usr/local

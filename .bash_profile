@@ -32,3 +32,4 @@ export BASH_ENV="$HOME/.bash_env"
 
 # Only source ~/.bashrc if this is an *interactive* shell
 case $- in *i*) [[ -r ~/.bashrc ]] && . ~/.bashrc ;; esac
+
