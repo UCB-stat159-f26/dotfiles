@@ -14,8 +14,10 @@
 
 # Contact: Fernando Pérez <fdo.perez@gmail.com>
 
-# Start by loading all "quiet" configuration
-[[ -r ~/.bash_env ]] && . ~/.bash_env
+# Load basic bash utilities (handy functions and constants)
+if [ -f $HOME/.bash_utils ]; then
+    . $HOME/.bash_utils
+fi
 
 
 ############################################################################
