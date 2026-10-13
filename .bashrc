@@ -48,8 +48,8 @@ fi
 # Environment variables relevant only for interactive usage
 #
 
-export EDITOR=emacs
-export CSHEDIT=emacs
+export EDITOR=vim
+export CSHEDIT=vim
 export ENSCRIPT=-MLetter
 export PAGER=less
 #export LESS=-r  # Seems to cause problems on OSX
@@ -100,7 +100,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias today='date "+%b %d, %Y" | tr -d "\n" | pbcopy'
     alias add='pbcopy < $HOME/.address'
     alias pbclean='pbpaste | pbcopy'
-    alias emacsapp='open -a /Applications/Emacs.app/'
     alias fixaudio='sudo killall coreaudiod'  # fix logitech webcam audio loop
     alias fixbluetooth='sudo pkill bluetoothd'  # fix logitech webcam audio loop
 else
@@ -133,7 +132,6 @@ alias clk='rm -f *~ .*~ *.bak .dircopy.log;rm -rf .ipynb_checkpoints'
 alias clu='rm -f *~ .*~ *.bak .dircopy.log;rm -rf .ipynb_checkpoints;rm -f [Uu]ntitled*'
 alias clk2='rm -f $(find . -name "*~")'
 alias clp='rm -f *~ .*~ *.pyc *.pyo'
-alias ec='emacs -nw ~/.bashrc'
 alias sc='source ~/.bashrc'
 alias sutil='source ~/.bash_utils'
 alias igrep='egrep -i'
@@ -165,17 +163,6 @@ alias findtabs='grep -n "\t"'
 
 # Make a directory of small pics for email
 alias imresizeall="imresize --outdir=small *.jpg *.JPG"
-
-# Emacs-related aliases
-# Plain-terminal emacs
-alias em='emacs -nw'
-# Fast-starting emacs
-alias emq='emacs -nw --no-init-file --no-site-file --load $HOME/.emacs.conf.d/init-minimal.el'
-# start emacsclient to quickly open a file in a running emacs
-alias emc='emacsclient -c -n'
-# Avoid biber/biblatex incompatibilities in tectonic
-# See https://github.com/tectonic-typesetting/tectonic/issues/893#issuecomment-1592466609
-alias tect='tectonic -Z search-path=/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex'
 
 alias make2dag='make -Bnd | make2graph | dot -Tpng -o make-dag.png'
 
